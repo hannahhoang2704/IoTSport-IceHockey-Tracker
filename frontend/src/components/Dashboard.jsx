@@ -22,19 +22,7 @@ const Dashboard = () => {
     error: null,
   });
 
-  // Helper function to safely access sensor values
-  const getSafeValue = (sensorData, key, defaultValue = 0) => {
-    /* if (!sensorData || !Array.isArray(sensorData)) return defaultValue;
-    if (!Array.isArray(sensorData[0])) return defaultValue;
-    return sensorData[0][axisIndex] ?? defaultValue; */
-    console.log('befor handle' + sensorData);
-
-    if (!sensorData || !Array.isArray(sensorData)) return defaultValue; // Ensure sensorData is an array
-    const lastElement = sensorData[sensorData.length - 1]; // Get the last element of the array
-    console.log('after handle' + lastElement);
-
-    return lastElement?.[key] ?? defaultValue;
-  };
+  // Helper function to safely access sensor values (removed as unused)
 
   // Process incoming sensor data
   const processSensorData = (topic, msg) => {
